@@ -1,0 +1,11 @@
+﻿{
+	"manifest_version": 2,
+	"name": "yande.re mark read",
+	"version": "0.0.1",
+	"background": { "scripts": ["jquery-2.0.0.min.js", "background.js"] },
+	"permissions" : ["tabs","http://localhost/"],
+	"content_scripts":[{
+		"matches":["https://yande.re/post*"],
+		"js":["jquery-2.0.0.min.js", "content_script.js"]
+	}]
+}
