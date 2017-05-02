@@ -1,5 +1,10 @@
 ﻿var re = /\d+/g;
 var pNum = $(".plid").text();
+thisURL = document.URL;
+if (thisURL.search(/yande\.re\/post\/show\/\d+/) != -1 && pNum.length == 0){
+	pNum = thisURL;
+}
+
 if(pNum){
 	var msg1 = {
 		type : "pool",
@@ -13,7 +18,7 @@ if(pNum){
 		if (msg.type == "return"){
 			pAccess = msg.title;
 			for (var i=0;i<pAccess.length;i++){
-				if(pAccess[i] != 0){
+				if(pAccess[i] != 0 && thisURL.search(/yande\.re\/post\/show\/\d+/) == -1){
 					pBanner[i].parentNode.setAttribute("style","background:#559e98");
 				}
 			}
